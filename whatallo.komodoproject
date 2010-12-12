@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Komodo Project File - DO NOT EDIT -->
-<project id="e05c80b3-5e05-f146-a6a8-685539f27831" kpf_version="5" name="randallo.komodoproject">
+<project id="e05c80b3-5e05-f146-a6a8-685539f27831" kpf_version="5" name="whatallo.komodoproject">
 <preference-set idref="e05c80b3-5e05-f146-a6a8-685539f27831">
   <boolean id="import_live">1</boolean>
 </preference-set>

@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-urlpatterns = patterns('randallo.views',
+urlpatterns = patterns('whatallo.views',
     # GUI
     (r'^/?$', 'index'),
     

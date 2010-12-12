@@ -1,7 +1,7 @@
 import logging
 import simplejson as json
 
-from randallo.engine import alloallo
+from whatallo.engine import alloallo
 from django import http, shortcuts
 
 # Details of the cookie used to store the user's list of recently watched
@@ -14,7 +14,7 @@ COOKIE_MAX_AGE = 31536000 # 1 year in seconds
 
 def index(request):
     """The random 'Allo 'Allo episode page"""
-    return shortcuts.render_to_response(u'randallo/index.html')
+    return shortcuts.render_to_response(u'whatallo/index.html')
 
 # API
 

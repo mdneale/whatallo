@@ -1,4 +1,4 @@
-# Django settings for randallo project.
+# Django settings for whatallo project.
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -72,5 +72,5 @@ TEMPLATE_DIRS = (
 INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sites',
-    'randallo'
+    'whatallo'
 )
