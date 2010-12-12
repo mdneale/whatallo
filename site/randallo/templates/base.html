@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>randallo</title>
+
+<style type="text/css">
+body { background-color: #F0E8D2; }
+
+a:link { text-decoration: none; color: #000000; }
+a:visited { text-decoration: none; color: #000000; }
+a:active { text-decoration: none; color: #000000; }
+a:hover { text-decoration: underline; color: #000000; }
+
+div.heading { font-size: 150%; }
+div.episode_name { font-size: 300%; }
+div.series_name { font-size: 200%; }
+div.episode_number { font-size: 200%; }
+span.watched_episode { font-size: 90%; }
+
+a.actions:link { text-decoration: underline; font-size: 95%; color: #223344; }
+a.actions:visited { text-decoration: underline; font-size: 95%; color: #223344; }
+a.actions:active { text-decoration: underline; font-size: 95%; color: #223344; }
+a.actions:hover { text-decoration: underline; font-size: 95%; color: #223344; }
+</style>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta name="author" content="randallo.appspot.com"/>
+<meta name="copyright" content="Copyright (c) {% now "Y" %} Matthew Neale"/>
+<meta name="viewport" content="initial-scale=1.0; user-scalable=no;"/>
+<meta name="description" content="A random 'Allo 'Allo episode for you to watch."/>
+
+<script src="/js/jquery.js" type="text/javascript"></script>
+
+{% block scripts %}{% endblock %}
+
+</head>
+
+<body>
+{% block content %}{% endblock %}
+</body>
+</html>

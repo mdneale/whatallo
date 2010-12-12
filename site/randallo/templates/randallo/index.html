@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+<script type="text/javascript">
+
+var current_episode_no = null;
+
+$(function() {
+    get_random_unwatched_episode();
+    get_viewing_history();
+})
+
+function get_random_unwatched_episode() {
+    $.post(
+	"/api/getrandomunwatchedepisode",
+	function(data) {
+            if (data.episode != null) {
+                $("#heading").html("You should watch");
+                
+                var episode_name = "";
+                if (data.episode.url == null) {
+                    episode_name = data.episode.name;
+                } else {
+                    episode_name = "<a href=\"" + data.episode.url + "\">" + data.episode.name + "</a>";
+                }
+                $("#episode_name").html(episode_name);
+                
+                var series_name = "";
+                if (data.episode.series.url == null) {
+                    series_name = data.episode.series.name;
+                } else {
+                    series_name = "<a href=\"" + data.episode.series.url + "\">" + data.episode.series.name + "</a>";
+                }
+                $("#series_name").html(series_name);
+        
+                var series_episode_no = "";        
+                if (data.episode.series_episode_no != null) {
+                    series_episode_no = ", Episode " + data.episode.series_episode_no;
+                }
+                $("#series_episode_no").html(series_episode_no);
+                
+                current_episode_no = data.episode.episode_no;
+            } else {
+                $("#heading").html("You have no more episodes to watch");
+                $("#episode_name").html("");
+                $("#series_name").html("");
+                $("#series_episode_no").html("");
+            }
+	}
+    );
+}
+
+function watch_episode() {
+    $.post(
+	"/api/watchepisode/" + current_episode_no,
+	function(data) {
+            get_viewing_history();
+        }
+    );
+}
+
+function get_viewing_history() {
+    $.post(
+	"/api/getviewinghistory",
+	function(data) {
+            var html = '';
+            
+            if (data.episode_list.length == 0) {
+                html += '<span class="watched_episode">None</span>';
+            }
+            
+            for (var i = 0; i < data.episode_list.length; i++) {
+                html += '<span class="watched_episode">';
+                
+                var episode_name = "";
+                if (data.episode_list[i].url == null) {
+                    episode_name = data.episode_list[i].name;
+                } else {
+                    episode_name = "<a href=\"" + data.episode_list[i].url + "\">" + data.episode_list[i].name + "</a>";
+                }
+                
+                var series_name = "";
+                if (data.episode_list[i].series.url == null) {
+                    series_name = data.episode_list[i].series.name;
+                } else {
+                    series_name = "<a href=\"" + data.episode_list[i].series.url + "\">" + data.episode_list[i].series.name + "</a>";
+                }
+                
+                if (data.episode_list[i].series_episode_no == null) {
+                    html += episode_name + ', ' + series_name;
+                } else {
+                    html += episode_name + ', ' + series_name + ', Episode ' + data.episode_list[i].series_episode_no;
+                }
+                html += '</span>';
+                html += '<br/>';
+            }
+            
+            $("#recent_episode_list").html(html);
+        }
+    );
+}
+
+function clear_viewing_history() {
+    $.post(
+	"/api/clearviewinghistory",
+	function(data) {
+            get_random_unwatched_episode();
+            get_viewing_history();
+        }
+    );
+}
+
+</script>
+{% endblock %}
+
+{% block content %}
+<div id="heading" class="heading"></div>
+<div id="episode_name" class="episode_name"></div>
+<div class="series_name">
+<span id="series_name"></span><span id="series_episode_no"></span>
+</div>
+
+<div>
+<input type="submit" value="No? Another?" onclick="javascript:get_random_unwatched_episode()"/>
+<input type="submit" value="Yes! I'll watch this one!" onclick="javascript:watch_episode()"/>
+</div>
+
+<br/>
+<div class="heading">Viewing History</div>
+<div id="recent_episode_list"></div>
+
+<input type="submit" value="Clear History" onclick="javascript:clear_viewing_history()"/>
+{% endblock %}
