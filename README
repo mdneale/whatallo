@@ -1,0 +1,11 @@
+README randallo
+---------------
+
+A website for randomly choosing an 'Allo 'Allo episode to watch.
+
+In Python, running on Google App Engine, using Django as a web framework.
+
+URL: http://randallo.appspot.com
+Author: Matthew Neale matt@matthewneale.net
+
+Copyright (c) 2010 Matthew Neale

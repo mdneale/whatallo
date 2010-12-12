@@ -1,15 +1,11 @@
-# TODO accented characters
-# TODO check names of episodes
-# TODO upload to github
-# TODO put online
-# TODO check and comment
-
 import logging
 import simplejson as json
 
 from randallo.engine import alloallo
 from django import http, shortcuts
 
+# Details of the cookie used to store the user's list of recently watched
+# episodes.
 COOKIE_KEY = 'recently_watched'
 COOKIE_PATH = '/'
 COOKIE_MAX_AGE = 31536000 # 1 year in seconds

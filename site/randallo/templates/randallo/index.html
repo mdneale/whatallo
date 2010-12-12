@@ -26,17 +26,19 @@ function get_random_unwatched_episode() {
                 $("#episode_name").html(episode_name);
                 
                 var series_name = "";
-                if (data.episode.series.url == null) {
-                    series_name = data.episode.series.name;
-                } else {
-                    series_name = "<a href=\"" + data.episode.series.url + "\">" + data.episode.series.name + "</a>";
-                }
-                $("#series_name").html(series_name);
-        
-                var series_episode_no = "";        
-                if (data.episode.series_episode_no != null) {
+                var series_episode_no = "";
+                
+                if (data.episode.series != null) {
+                    if (data.episode.series.url == null) {
+                        series_name = data.episode.series.name;
+                    } else {
+                        series_name = "<a href=\"" + data.episode.series.url + "\">" + data.episode.series.name + "</a>";
+                    }
+            
                     series_episode_no = ", Episode " + data.episode.series_episode_no;
                 }
+                
+                $("#series_name").html(series_name);
                 $("#series_episode_no").html(series_episode_no);
                 
                 current_episode_no = data.episode.episode_no;
@@ -79,18 +81,20 @@ function get_viewing_history() {
                     episode_name = "<a href=\"" + data.episode_list[i].url + "\">" + data.episode_list[i].name + "</a>";
                 }
                 
-                var series_name = "";
-                if (data.episode_list[i].series.url == null) {
-                    series_name = data.episode_list[i].series.name;
-                } else {
-                    series_name = "<a href=\"" + data.episode_list[i].series.url + "\">" + data.episode_list[i].series.name + "</a>";
+                html += episode_name;
+                
+                if (data.episode_list[i].series != null) {
+                    var series_name = "";
+                
+                    if (data.episode_list[i].series.url == null) {
+                        series_name = data.episode_list[i].series.name;
+                    } else {
+                        series_name = "<a href=\"" + data.episode_list[i].series.url + "\">" + data.episode_list[i].series.name + "</a>";
+                    }
+                    
+                    html += ', ' + series_name + ', Episode ' + data.episode_list[i].series_episode_no;
                 }
                 
-                if (data.episode_list[i].series_episode_no == null) {
-                    html += episode_name + ', ' + series_name;
-                } else {
-                    html += episode_name + ', ' + series_name + ', Episode ' + data.episode_list[i].series_episode_no;
-                }
                 html += '</span>';
                 html += '<br/>';
             }

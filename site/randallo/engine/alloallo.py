@@ -31,12 +31,12 @@ def get_show():
         ]),
 
         # 1985 Christmas Special
-        show.Episode(u'The Gateau from the Chateau (Klinkerhoffen in Control), 1985 Christmas Special', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_2)#Christmas_Special:_The_Gateau_from_the_Chateau'),
+        show.Episode(u'The Gateau from the Chateau, 1985 Christmas Special', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_2)#Christmas_Special:_The_Gateau_from_the_Chateau'),
 
         # Series 3
         show.Series(u'Series 3', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_3)', [
             show.Episode(u'The Nicked Knockwurst', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_3)#The_Nicked_Knockwurst'),
-            show.Episode(u'Gruber Does Some Mincing (Gruber Carpeted)', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_3)#Gruber_Does_Some_Mincing'),
+            show.Episode(u'Gruber Does Some Mincing', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_3)#Gruber_Does_Some_Mincing'),
             show.Episode(u'The Sausage in the Wardrobe', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_3)#The_Sausage_in_the_Wardrobe'),
             show.Episode(u'Flight of Fancy', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_3)#Flight_of_Fancy'),
             show.Episode(u'Pretty Maids All in a Row', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_3)#Pretty_Maids_All_in_a_Row'),
@@ -45,7 +45,7 @@ def get_show():
 
         # Series 4
         show.Series(u'Series 4', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_4)', [
-            show.Episode(u'Prisoners of War (Hans Goes Over The Top)', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_4)#Prisoners_of_War'),
+            show.Episode(u'Prisoners of War', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_4)#Prisoners_of_War'),
             show.Episode(u'Camp Dance', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_4)#Camp_Dance'),
             show.Episode(u'Good Staff Are Hard to Find', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_4)#Good_Staff_Are_Hard_to_Find'),
             show.Episode(u'The Flying Nun', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_4)#The_Flying_Nun'),
@@ -64,9 +64,9 @@ def get_show():
             show.Episode(u'No Hiding Place', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_5)#No_Hiding_Place'),
             show.Episode(u'The Arrival of the Homing Duck', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_5)#The_Arrival_of_the_Homing_Duck'),
             show.Episode(u'Watch the Birdie', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_5)#Watch_the_Birdie'),
-            show.Episode(u'Rene - Under an Assumed Nose', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_5)#Ren.C3.A9_-_Under_an_Assumed_Nose'),
+            show.Episode(u'Ren\u00E9 - Under an Assumed Nose', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_5)#Ren.C3.A9_-_Under_an_Assumed_Nose'),
             show.Episode(u'The Confusion of the Generals', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_5)#The_Confusion_of_the_Generals'),
-            show.Episode(u'Who\'s for the Vatican', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_5)#Who.27s_for_the_Vatican.3F'),
+            show.Episode(u'Who\'s for the Vatican?', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_5)#Who.27s_for_the_Vatican.3F'),
             show.Episode(u'Ribbing the Bonk', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_5)#Ribbing_the_Bonk'),
             show.Episode(u'The Reluctant Millionaires', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_5)#The_Reluctant_Millionaires'),
             show.Episode(u'A Duck for Launch', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_5)#A_Duck_for_Launch'),
@@ -106,7 +106,7 @@ def get_show():
             show.Episode(u'Leg it to Spain!', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_7)#Leg_It_to_Spain.21'),
             show.Episode(u'Prior Engagements', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_7)#Prior_Engagements'),
             show.Episode(u'Soup and Sausage', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_7)#Soup_and_Sausage'),
-            show.Episode(u'Rene of the Gypsies', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_7)#Ren.C3.A9_of_the_Gypsies'),
+            show.Episode(u'Ren\u00E9 of the Gypsies', u'http://en.wikipedia.org/wiki/\'Allo_\'Allo!_(series_7)#Ren.C3.A9_of_the_Gypsies'),
         ]),
 
         # 1991 Christmas Special
