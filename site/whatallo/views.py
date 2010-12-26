@@ -1,3 +1,4 @@
+import datetime
 import logging
 import simplejson as json
 
@@ -7,8 +8,6 @@ from django import http, shortcuts
 # Details of the cookie used to store the user's list of recently watched
 # episodes.
 COOKIE_KEY = 'recently_watched'
-COOKIE_PATH = '/'
-COOKIE_MAX_AGE = 31536000 # 1 year in seconds
 
 # GUI
 
@@ -130,10 +129,15 @@ def watch_episode(request, episode_no):
         new_recently_watched_str += str(recent_episode_no)
     
     response = http.HttpResponse(json.dumps([], separators=(u',',u':')), mimetype=u'application/json')
-    response.set_cookie(key=COOKIE_KEY, value=new_recently_watched_str, max_age=COOKIE_MAX_AGE, path=COOKIE_PATH)
-    
-    return response
 
+    # Expire after one year
+    expires = datetime.datetime.now()
+    expires += datetime.timedelta(days=365)
+    
+    response.set_cookie(COOKIE_KEY, value=new_recently_watched_str, expires=expires.strftime('%a, %d-%b-%y %H:%M:%S GMT'))
+
+    return response
+    
 def get_viewing_history(request):
     """Get the details of all the episodes the user has watched recently."""
     
