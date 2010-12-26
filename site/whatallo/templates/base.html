@@ -20,6 +20,8 @@ a.actions:link { text-decoration: underline; font-size: 95%; color: #000000; }
 a.actions:visited { text-decoration: underline; font-size: 95%; color: #000000; }
 a.actions:active { text-decoration: underline; font-size: 95%; color: #000000; }
 a.actions:hover { text-decoration: underline; font-size: 95%; color: #000000; }
+
+div.footer { font-size: 75%; text-align: center }
 </style>
 
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
@@ -36,5 +38,15 @@ a.actions:hover { text-decoration: underline; font-size: 95%; color: #000000; }
 
 <body>
 {% block content %}{% endblock %}
+
+{% block footer %}
+<div class="footer">
+<br/>
+<br/>
+<p>Copyright (c) {% now "Y" %} Matthew Neale</p>
+<p>Need help? <a class="actions" href="mailto: support@whatallo.com">support@whatallo.com</a></p>
+</div>
+{% endblock %}
+
 </body>
 </html>
