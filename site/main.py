@@ -1,40 +1,26 @@
-import logging, os, sys
+import logging
+import os
+import sys
 
-from google.appengine.ext.webapp import util
+# ----- MAKE SURE NO DJANGO IMPORTS BEFORE THIS -----
 
 # Must set this env var before importing any part of Django
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
-# Remove the standard version of Django supplied with App Engine
-for k in [k for k in sys.modules if k.startswith('django')]:
-    del sys.modules[k]
+# Use Django 1.2 as distributed with App Engine
+from google.appengine.dist import use_library
+use_library('django', '1.2')
 
-# Force sys.path to have our own directory first, in case we want to import from it
-sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
-
-# Force Django to reload its settings
-from django.conf import settings
-settings._target = None
+from google.appengine.ext.webapp import util
 
 import django.core.handlers.wsgi
-import django.core.signals
-import django.db
-import django.dispatch.dispatcher
 
-from django.core.signals import got_request_exception
-from django.db import _rollback_on_exception
-
-def log_exception(*args, **kwds):
-    logging.exception('Exception in request:')
-
-# Log errors
-got_request_exception.connect(log_exception)
-
-# Unregister the rollback event handler
-django.dispatch.Signal().disconnect(django.db._rollback_on_exception, django.core.signals.got_request_exception)
+# Place the directory containing this file on sys.path, the directory which
+# contains all the code
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
 def main():
-    logging.getLogger().setLevel(logging.ERROR)
+    logging.getLogger().setLevel(logging.WARNING)
     
     # Create a Django application for WSGI
     application = django.core.handlers.wsgi.WSGIHandler()
