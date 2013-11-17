@@ -5,7 +5,7 @@ A website for randomly choosing an 'Allo 'Allo episode to watch.
 
 In Python, running on Google App Engine, using Django as a web framework.
 
-URL: http://whatallo.com / http://whatallo.appspot.com
+URL: http://whatallo.appspot.com
 Author: Matthew Neale matt@matthewneale.net
 
 Source: https://github.com/mdneale/whatallo
