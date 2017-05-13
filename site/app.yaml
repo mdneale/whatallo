@@ -1,12 +1,17 @@
 application: whatallo-hrd
-version: 3
-runtime: python
+version: 4
+runtime: python27
 api_version: 1
+threadsafe: true
+
+libraries:
+- name: django
+  version: "1.4"
 
 handlers:
 - url: /js
   static_dir: js
 
 - url: /.*
-  script: main.py
+  script: main.app
   secure: never

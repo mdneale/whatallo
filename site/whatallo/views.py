@@ -1,6 +1,6 @@
 import datetime
 import logging
-import simplejson as json
+import json
 
 from whatallo.engine import alloallo
 from django import http, shortcuts
